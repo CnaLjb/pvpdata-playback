@@ -1,15 +1,15 @@
 ///<reference path='../definitelyTyped/app.d.ts' />
 var MongoClient = require('mongodb').MongoClient;
-
-
+import util = require("util");
+var Promise = require('promise');
 
 class DBHelper{
 
     private static dbcon;
 
-    public getConnection():any{
+    static getConnection(ip:string):any{
         if(!DBHelper.dbcon){
-            var url = "mongodb://127.0.0.1:27017/poke302";
+            var url = util.format("mongodb://%s/poke302",ip);
             MongoClient.connect(url)
             .then(function (db) { // <- db as first argument
                 console.log(db);
@@ -21,8 +21,13 @@ class DBHelper{
         }
         
         return DBHelper.dbcon
-    }   
-    
+    }
+
+    static getPvpRecord(){
+        return new Promise(function(resolve,reject) {
+
+        })
+    }
 }
 
 

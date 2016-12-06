@@ -11,7 +11,7 @@ app.get('/', function (req:express.Request, res:express.Response) {
 })
 
 app.get("/playback/getEnemyUserId",routMd.getEnemyUserId);
-
+app.get("/playback/getPvplist",routMd.getPvplist);
 
 
 var server = app.listen(8081, function () {

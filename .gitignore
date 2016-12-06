@@ -8,3 +8,4 @@
 #排除手工维护的js文件
 !mongo.js
 !logfilter/UserLog.js
+!public/js/index.js

@@ -40,6 +40,16 @@ class Playback{
      * @memberOf Playback
      */
     static getEnemyUserId(userId:string,ip:string):string{
+        return null;
+    }
 
+    
+    /**
+     * 获取玩家最近对战记录
+     * @param  {string} userId
+     * @param  {string} ip
+     */
+    static getPvplist(userId:string,ip:string){
+                    
     }         
 }

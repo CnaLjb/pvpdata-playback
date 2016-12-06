@@ -1,9 +1,32 @@
 <!doctype html>
 <html>
   <head>
-    <title></title>
+    <title>pvp对战记录回放</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
-            hello world！    
+      <div class="wrap">
+          <div class="wrap-title">复刻对战记录查询</div>
+          <div class="cut-off"></div>
+          <div class="content">
+            <div>
+              <div class="item">
+                <span>
+                  玩家Id：
+                </span>
+                <input id="userId"/>
+              </div>
+              <div class="item">
+                <span>
+                  数据库Ip：
+                </span>
+                <input id="ip"/>
+              </div>
+            </div>
+            <button id="findRecord">查询</button>
+          </div>
+      </div>
+      <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+      <script src="js/index.js"></script>            
   </body>
 </html>
