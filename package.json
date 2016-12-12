@@ -12,6 +12,7 @@
     "bluebird": "^3.4.6",
     "express": "latest",
     "mongodb": "^2.2.11",
-    "promise": "^7.1.1"
+    "promise": "^7.1.1",
+    "underscore": "^1.8.3"
   }
 }

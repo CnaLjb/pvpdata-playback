@@ -1,7 +1,7 @@
 ///<reference path='./definitelyTyped/app.d.ts'/>
 import express = require('express');
 var app = express();
-import routMd = require("./rout/rout");
+import routMd = require("./handler/rout");
 
 
 app.use(express.static('public'));

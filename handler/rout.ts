@@ -16,10 +16,12 @@ import playback = playbackMd.Playback
 export function getPvplist(req,res):void{
     var userId = req.query.userId;
     var ip = req.query.ip;
+    console.log("userId",userId);
+    console.log("usiperId",ip);
     playback.getPlayer(ip,userId).then(playback.getPlayerPvpList)
     .then(function (data) {
         res.setHeader('Content-Type', 'text/plain');
-        res.end(data);
+        res.send(data);
     })
     .catch(function (e) {
         res.status(500, {
