@@ -1,5 +1,5 @@
-import dbhelperMd = require("../component/dbhelper");  
-import DBHelper = dbhelperMd.DBHelper
+import playbackMd = require("./playback");  
+import playback = playbackMd.Playback
 
 // https://www.promisejs.org/
 // https://segmentfault.com/a/1190000002928371
@@ -16,7 +16,7 @@ import DBHelper = dbhelperMd.DBHelper
 export function getPvplist(req,res):void{
     var userId = req.query.userId;
     var ip = req.query.ip;
-    DBHelper.getPvpRecord(userId,ip)
+    playback.getPlayer(ip,userId).then(playback.getPlayerPvpList)
     .then(function (data) {
         res.setHeader('Content-Type', 'text/plain');
         res.end(data);
@@ -38,4 +38,3 @@ export function getPvplist(req,res):void{
 export function getEnemyUserId(req,res):void{
    
 }
-

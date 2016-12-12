@@ -1,55 +1,38 @@
-
+import dbhelperMd = require("../component/dbhelper");  
+import dbHelper = dbhelperMd.DBHelper
 
 /**
  * PVP战斗回放类
  */
-class Playback{
-
-
-    private ownUserId:string;
-
-    private enemyUserId:string;
-
-    constructor(userId:string){
-        this.ownUserId = userId;
-    }
-    
-    
-    /**
-     * 根据玩家的用户名获取玩家所在区的数据库IP
-     * 
-     * @returns {string}
-     * 
-     * @memberOf Playback
-     */
-    static getDatabaseIpFromUserId():string{
-        var dbip = "";
-
-        return dbip;
-    }
-
+export class Playback{
 
     /**
-     * 获取敌人的UserId
+     * 获取某个玩家数据
      * 
-     * @static
-     * @param {string} userId
-     * @param {string} ip
-     * @returns {string}
-     * 
-     * @memberOf Playback
-     */
-    static getEnemyUserId(userId:string,ip:string):string{
-        return null;
-    }
-
-    
-    /**
-     * 获取玩家最近对战记录
-     * @param  {string} userId
      * @param  {string} ip
+     * @param  {string} userId
      */
-    static getPvplist(userId:string,ip:string){
-                    
-    }         
+    static getPlayer(ip:string,userId:string):any{
+        return dbHelper.getConnection(ip).then(function(db){
+            if(!db){
+                console.log("connect error...");
+                return;
+            }else{
+                console.log("connect success!");
+            }
+            db.collection("player").findOne({userId:userId});          
+        })  
+    }
+
+    static getPlayerPvpList(player:any){
+        console.log("player:",player);
+        return player.playerData._version;
+        // return player.playerData._pvp.pvpRecord;
+    }     
 }
+
+Playback.getPlayer("127.0.0.1","1s2p298").then(Playback.getPlayerPvpList).then(function(data){
+    console.log("version:",data);
+}).catch(function(error){
+    console.log("err",error);
+})
