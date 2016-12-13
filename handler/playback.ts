@@ -3,10 +3,26 @@ import dbhelperMd = require("../component/dbhelper");
 import dbHelper = dbhelperMd.DBHelper
 var Promise = require('promise');
 var _  = require("underscore");
+
 /**
  * PVP战斗回放类
  */
 export class Playback{
+
+    /**
+     * 回放玩家A
+     */
+    private static playerA:string = "1s2p100";
+
+    /**
+     * 回放玩家B
+     */
+    private static playerB:string = "1s2p101";
+
+    /**
+     * 回放ip
+     */
+    private static playbackIp:string = "127.0.0.1";
 
     /**
      * 获取某个玩家数据
@@ -51,6 +67,12 @@ export class Playback{
                 console.log("connect success!");
             }
             return db.collection("pvpBatRecord").findOne({id:id});          
+        })
+    }
+
+    static insertRecord(userId:string,recordId:any){
+        Playback.getPlayer(Playback.playbackIp,Playback.playerA).then(function(player){
+            
         })
     }     
 }

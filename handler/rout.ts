@@ -21,7 +21,11 @@ export function getPvplist(req,res):void{
     playback.getPlayer(ip,userId).then(playback.getPlayerPvpList)
     .then(function (data) {
         res.setHeader('Content-Type', 'text/plain');
-        res.send(data);
+        var info = {
+            
+            pvps:data
+        }
+        res.send(info);
     })
     .catch(function (e) {
         res.status(500, {
@@ -30,13 +34,3 @@ export function getPvplist(req,res):void{
     });
 }
 
-/**
- * 获取敌人UserId
- * 
- * @export
- * @param {any} req
- * @param {any} res
- */
-export function getEnemyUserId(req,res):void{
-   
-}
