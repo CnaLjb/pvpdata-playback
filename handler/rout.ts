@@ -22,7 +22,6 @@ export function getPvplist(req,res):void{
     .then(function (data) {
         res.setHeader('Content-Type', 'text/plain');
         var info = {
-            
             pvps:data
         }
         res.send(info);

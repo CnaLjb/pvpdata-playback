@@ -8,22 +8,32 @@
       <div class="wrap">
           <div class="wrap-title">复刻对战记录查询</div>
           <div class="cut-off"></div>
-          <div class="content">
-            <div>
-              <div class="item">
-                <span>
-                  玩家Id：
-                </span>
-                <input id="userId"/>
+          <div clas>
+            <div class="menu">
+              <div>
+                <div class="item">
+                  <span>
+                    玩家Id：
+                  </span>
+                  <input id="userId"/>
+                </div>
+                <div class="item">
+                  <span>
+                    数据库Ip：
+                  </span>
+                  <input id="ip"/>
+                </div>
               </div>
-              <div class="item">
-                <span>
-                  数据库Ip：
-                </span>
-                <input id="ip"/>
-              </div>
+              <button id="findRecord">查询</button>
             </div>
-            <button id="findRecord">查询</button>
+            <div id="pvps">
+              <div class="pvp_item">
+                <div class="pvp_time">pvp时间</div>
+                <div class="pvp_oppName">敌人昵称</div>
+                <div class="pvp_opplv">敌人等级</div>
+                <div class="pvp_oppRes">pvp结果</div>
+              </div>               
+            </div>
           </div>
       </div>
       <script src="http://code.jquery.com/jquery-1.11.1.js"></script>

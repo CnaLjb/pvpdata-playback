@@ -10,7 +10,7 @@ app.get('/', function (req:express.Request, res:express.Response) {
      res.sendfile( __dirname + "/" + "index.html" );
 })
 
-app.get("/playback/getEnemyUserId",routMd.getEnemyUserId);
+
 app.get("/playback/getPvplist",routMd.getPvplist);
 
 

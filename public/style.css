@@ -10,12 +10,14 @@ body { font: 18px Helvetica, Arial; }
 .cut-off{
     margin: 15px 0px; 
     height: 5px;
+    padding: 0px 0px;
     background-color: #7bc3fd;
 }
-.content{
+.menu{
     text-align:center;
+    width: 30%; 
 }
-.content span{
+.menu span{
     display:inline-block; 
     width: 150px;
     font-size: 18px;
@@ -31,4 +33,36 @@ body { font: 18px Helvetica, Arial; }
 #findRecord{
     width:120px;
     height: 25px;
+}
+
+
+#pvps{
+    margin-top: 10px;
+    border: #e0d0d0 solid 5px;
+    text-align:center;
+}
+
+.pvp_item{
+    margin: 3px 0px;
+    border-bottom: 1px solid #ddd;
+    height: 28px;
+}
+.pvp_time{
+    display: inline-block;
+    width: 25%;
+}
+.pvp_oppName{
+    display: inline-block;
+    width: 25%;
+}
+.pvp_opplv{
+    display: inline-block;
+    width: 20%;
+}
+.pvp_oppRes{
+    display: inline-block;
+}
+.rowl{
+    height: 1px;
+    border-top: 1px solid #ddd;;
 }

@@ -1,15 +1,15 @@
 var fs = require("fs");
 
-var path = "./3s315p3921981.log";
+var path = "./471.log";
 var txt = fs.readFileSync(path,'utf-8');
-var reg2 = /(.*3s315p3921981.*\[6[0-9]+\].*|.*\[6[0-9]+\].*3s315p3921981.*)/g;
+var reg2 = /(.*24s475p5648195.*\[6[0-9]+\].*|.*\[6[0-9]+\].*24s475p5648195.*)/g;
 //var reg = /.*14s124p3346063.*\[64[0-9]+\].*/g;
 //var reg = /.*3s1p356.*metSpirits.*nodeId=10050/g;
 var res = txt.match(reg2);
 
 for(var i = 0; i < res.length; i++){
     var addStr = res[i] + "\r\n";
-    fs.appendFileSync("after-3s315p3921981.log",addStr);
+    fs.appendFileSync("after-471.log",addStr);
 }
 console.log("finish...");
 process.exit(1)
